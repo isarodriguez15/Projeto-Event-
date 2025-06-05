@@ -1,11 +1,21 @@
+<<<<<<< HEAD
+.botao{
+=======
 .botao {
     /* padding: 10px 100px; */
     width: 356px;
     height: 40px;
+>>>>>>> 189ea103588e05e60eb21d3423a83bbc1f17ab82
     border: none;
     cursor: pointer;
     background-color: #B51D44;
     color: white;
+<<<<<<< HEAD
+    width: 356px;
+    height: 40px;
+    border-radius: 4px;
+
+=======
     border-radius: 6px;
     /* Negrito */
     transition: background-color 0.3s ease, transform 0.3s ease;
@@ -14,4 +24,5 @@
 .botao:hover{
     background-color: #B51D44;
     transform: scale(1.05);
+>>>>>>> 189ea103588e05e60eb21d3423a83bbc1f17ab82
 }

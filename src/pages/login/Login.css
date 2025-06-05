@@ -1,3 +1,46 @@
+<<<<<<< HEAD
+.main_login{
+    display: flex;
+    height: 100vh;
+    background-color: #B51D44;
+}
+
+.logo_banner{
+
+    flex: 1;
+
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo_banner img{
+    width: 470px;
+}
+
+
+ .section_login{
+    flex: 1;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ }
+
+ .form_login{
+    color: white;
+
+    width: 50%;
+    height: 50%;
+
+    display: flex;
+    justify-content: space-around;
+    justify-content: center;
+=======
 .main_login {
     display: flex;
     height: 100vh;
@@ -28,10 +71,28 @@
     width: 49%;
     display: flex;
     justify-content: space-around;
+>>>>>>> 189ea103588e05e60eb21d3423a83bbc1f17ab82
     align-items: center;
     flex-direction: column;
 }
 
+<<<<<<< HEAD
+.campos_login{
+    width: 100%;
+}
+
+
+.campo_input{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.campo_input input{
+    height: 30px;
+
+
+=======
 .form_login a {
     text-decoration: none;
     color:#A6A0A0;
@@ -56,11 +117,29 @@
 
 .campo_input input {
     height: 28px;
+>>>>>>> 189ea103588e05e60eb21d3423a83bbc1f17ab82
     padding: 0 10px;
 
     border-top: none;
     border-left: none;
     border-right: none;
+<<<<<<< HEAD
+    border-color: #B4A9A9;
+
+    outline: none;
+    color: #B4A9A9;
+}
+
+.form_login a{
+    margin-bottom: 40px;
+    color: #A6A0A0;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+    .logo_banner{
+        display: none;
+=======
     outline: none;
 }
 
@@ -72,5 +151,6 @@
     .section_login img {
         width: 247px;
         height: 47px;
+>>>>>>> 189ea103588e05e60eb21d3423a83bbc1f17ab82
     }
 }

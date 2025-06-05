@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+footer{
+    color: black;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 40px;
+
+    border-top: 1px solid black;
+}
+
+=======
 footer {
     display: flex;
     justify-content: center;
@@ -17,3 +31,4 @@ footer {
         font-size: 14px;
     }
 }
+>>>>>>> 189ea103588e05e60eb21d3423a83bbc1f17ab82

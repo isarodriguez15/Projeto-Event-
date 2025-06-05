@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "name": "eventos",
+=======
   "name": "event",
+>>>>>>> 189ea103588e05e60eb21d3423a83bbc1f17ab82
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,8 +17,12 @@
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.1",
     "react-scripts": "5.0.1",
+<<<<<<< HEAD
+    "sweetalert2": "^11.21.2",
+=======
     "routes": "^2.1.0",
     "sweetalert2": "^11.22.0",
+>>>>>>> 189ea103588e05e60eb21d3423a83bbc1f17ab82
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -40,5 +48,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+<<<<<<< HEAD
+  },
+  "devDependencies": {
+    "react-router-dom": "^7.5.3"
+=======
+>>>>>>> 189ea103588e05e60eb21d3423a83bbc1f17ab82
   }
 }
