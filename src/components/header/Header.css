@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 header{
     background-color: white;
 
@@ -52,17 +52,7 @@ header{
         display: none;
     }
 } */
-=======
-header {
-    background-color: white;
 
-    height: 85px;
-    width: 100%;
-
-    /* Borda */
-    box-shadow: 1px 4px 4px 0px #00000045;
-    position: relative;
-}
 
 .cabecalho {
     display: flex;
@@ -111,4 +101,4 @@ header {
     text-decoration: none;
     color: white;
 }
->>>>>>> 189ea103588e05e60eb21d3423a83bbc1f17ab82
+

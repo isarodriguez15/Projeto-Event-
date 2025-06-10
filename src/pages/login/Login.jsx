@@ -1,62 +1,97 @@
-<<<<<<< HEAD
-import "./Login.css"
-import Logo from "../../assets/img/logo1.svg";
-import Logo_banner from "../../assets/img/undraw_login_re_4vu2\ 1.png";
-import Botao from "../../components/botao/Botao";
-=======
-import Logo from "../../assets/img/Logo.svg"
-import Botao from "../../components/botao/Botao"
-import "./Login.css"
->>>>>>> 189ea103588e05e60eb21d3423a83bbc1f17ab82
+import React from 'react';
+import Logo from '../../assets/img/logo.svg'; // ajuste conforme seu caminho
+import Logo_banner from '../../assets/img/logo_banner.svg'; // ajuste conforme seu caminho
+import Botao from '../../components/botao/Botao'; // ajuste conforme sua estrutura
+
+import api from "../../Services/services";
+import Swal from "sweetalert2";
+
+
+import './Login.css'; // arquivo de estilos
+import { userDecodeToken } from '../../auth/Auth';
+import secureLocalStorage from 'react-secure-storage';
+
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
+
+    const navigate = useNavigate();
+
+    async function realizarAutenticacao() {
+
+        e.preventDefault();
+        // console.log(email,senha)
+
+        const usuario = {
+            email: email,
+            senha: senha
+        }
+        if (senha.trim() != "" || email.trim() != "") {
+
+            try {
+              const resposta =  await api.post("Login", usuario);
+              const token = resposta.data.token;
+
+              if(token){
+                   //token sera decodificado:
+                  const tokenDecodificado = userDecodeToken(token);
+
+                  secureLocalStorage.setItem("tokenLogin", JSON.stringify(tokenDecodificado));
+
+                  if(tokenDecodificado.tipoUsuario === "aluno"){
+                    //redirecionar a tela de lista de eventos(branco)
+                    navigate("/Evento")
+                  }else{
+                    //ele vai encaminhar pra tela cadastro de eventos(vermelha)
+                    navigate("/CadastroEvento")
+                  }
+
+                 // console.log("Token decodificado:");
+                 // console.log("tokenDecodificado.tipoUsuario");
+              }
+
+              console.log(resposta.data.token);
+
+            } catch (error) {
+                console.log(error);
+                alert("Email e senha inválidos! Para dúvidas entre em contato com o suporte.");
+            }
+
+        } else {
+            alert("Preencha os campos vazios para realizar o login!")
+        }
+    }
+
     return (
         <main className="main_login">
-<<<<<<< HEAD
+            {/* Banner lateral com logo */}
             <div className="logo_banner">
-                <img src={Logo_banner} alt="" />
+                <img src={Logo_banner} alt="Banner do sistema" />
             </div>
+
+            {/* Área de login */}
             <section className="section_login">
-                <img src={Logo} alt="" />
-                <form action="" className="form_login">
+                <img src={Logo} alt="Logo do sistema" />
+
+                <form className="form_login" onSubmit={realizarAutenticacao}>
                     <div className="campos_login">
                         <div className="campo_input">
-                            <input type="text" name="Usuario" placeholder="Username" />
+                            <input type="text" name="usuario" placeholder="Username" value={email} onChange={(e) => setEmail(e.target.value)} />
                         </div>
                         <div className="campo_input">
-                            <input type="password" name="senha" placeholder="Password" />
+                            <input type="password" name="senha" placeholder="Password" value={senha} onChange={(e) => setSenha(e.target.value)} />
                         </div>
                     </div>
-                        <a href="">Esqueceu sua senha?</a>
+
+                    <a href="#">Esqueceu sua senha?</a>
+
                     <Botao nomeBotao="Login" />
-=======
-            
-            <div className="banner">
-                <div id="fundo_login"/>
-            </div>
-
-            <section className="section_login">
-                <img src={Logo} alt="Logo do Event"/>
-
-                <form action="" className="form_login">
-
-                    <div className="campos_login">
-                        <div className="campo_input">
-                            <input type="Email" name="email" placeholder="Username"/>
-                        </div>
-
-                        <div className="campo_input">
-                            <input type="PassWord" name="senha" placeholder="password" />
-                        </div>
-                        
-                        </div>
-                    <a href="">Esqueceu Sua Senha?</a>
-                    <Botao botao="Login"/>
->>>>>>> 189ea103588e05e60eb21d3423a83bbc1f17ab82
                 </form>
             </section>
         </main>
-    )
-}
+    );
+};
 
 export default Login;
